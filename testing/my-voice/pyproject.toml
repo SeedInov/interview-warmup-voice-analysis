@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "speechr"
+name = "my-voice"
 version = "0.1.0"
 description = ""
 authors = ["Muhammad Umar Anzar <63141196+umar-anzar@users.noreply.github.com>"]
@@ -7,11 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-speechrecognition = "^3.10.1"
-pyaudio = "^0.2.14"
+pandas = "^2.2.0"
 numpy = "^1.26.3"
-sounddevice = "^0.4.6"
-pocketsphinx = "^5.0.3"
+scipy = "^1.12.0"
+praat-parselmouth = "^0.4.3"
+my-voice-analysis = "^0.7"
 
 
 [build-system]

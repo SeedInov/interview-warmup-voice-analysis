@@ -231,6 +231,38 @@ files = [
 ]
 
 [[package]]
+name = "pocketsphinx"
+version = "5.0.3"
+description = "Official Python bindings for PocketSphinx"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pocketsphinx-5.0.3-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:76c4cb1e70ab76c40e6af8081e6a73f5fd26d7e19709783043c0dcdb39e243a1"},
+    {file = "pocketsphinx-5.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f1a3203dc05d5bc7c5c90748039cc1681296988f5eb318a89f9e585d35f3f765"},
+    {file = "pocketsphinx-5.0.3-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:208d78d2b0939b07d8851d0fba9b0b7656f9f3176a441a061410adff918548b9"},
+    {file = "pocketsphinx-5.0.3-cp310-cp310-win_amd64.whl", hash = "sha256:2c80082bf04a83a4e6cc252fd2ee0cd826d4b90f843038e2187e719a9a8e9dd0"},
+    {file = "pocketsphinx-5.0.3-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:2cd9ac5204e85c1465af410928bba25dfbd31a26b999cda3285b29a5eb06254c"},
+    {file = "pocketsphinx-5.0.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f91bf9f6b26181ac8b8e3e856bf996cdd4908fb70db0c2dab03ed0af13f6178b"},
+    {file = "pocketsphinx-5.0.3-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:9f76487907381b7d12b8fa93f9fed06b6b28e40c41383cb7ed880d1d0c4a1bfb"},
+    {file = "pocketsphinx-5.0.3-cp311-cp311-win_amd64.whl", hash = "sha256:32b1dcceb36aebeea0d38634619c70f4881f5fa721ebb9105a24048a00dbef5f"},
+    {file = "pocketsphinx-5.0.3-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:59a42e5d62a2bca2ff9578d0647cadb15af55fc60d5229239f1244e014684b6b"},
+    {file = "pocketsphinx-5.0.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9e25199d0b221bcef20c965cf06a9bf73abbee8502854a981bea8acd4500fc54"},
+    {file = "pocketsphinx-5.0.3-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:edfae56aaa606d57f01fb79bb081d8e9e40660cd7673a44aa66ad774e43be6e9"},
+    {file = "pocketsphinx-5.0.3-cp312-cp312-win_amd64.whl", hash = "sha256:c3db250ca75d4c0e248915d0bc7d9fd51827b3989f4def3e44efaa177858cc79"},
+    {file = "pocketsphinx-5.0.3-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:2599e8f9cf9807b5a8ecc57fb5b3a156c1fb2f6ac1d16c31334486215161b9a9"},
+    {file = "pocketsphinx-5.0.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e1072d84c66440e30fd405bbe64c27c247716990e34f14f34297b492a49bcebd"},
+    {file = "pocketsphinx-5.0.3-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:0c4906883d7bf2afdf38f1a192090d830f6c016e7b9670fc4720af86cfe1a2f6"},
+    {file = "pocketsphinx-5.0.3-cp38-cp38-win_amd64.whl", hash = "sha256:19f06c4cff0472e05b5d79651b6875c3f601ee48d1b880ad3ac5635258565d99"},
+    {file = "pocketsphinx-5.0.3-pp310-pypy310_pp73-macosx_10_9_x86_64.whl", hash = "sha256:392ec249b59c30f9fe3d18bf64c2f2b516ebfe8c5d6009423ca3a04acf8aee6e"},
+    {file = "pocketsphinx-5.0.3-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5474311a36d2a8b52b8ae2d9ced4da2eae4e6ef60010268983b1ba6a2c5eae9d"},
+    {file = "pocketsphinx-5.0.3-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:f6b4ef1c1fa0ac19650143b5d8045bbf2dffadffea2390306daba090f323b13d"},
+    {file = "pocketsphinx-5.0.3.tar.gz", hash = "sha256:27f4de0ca2d2bce391ce87eaab84fe6f0bc059b306fd1702d5fe6549b66e1586"},
+]
+
+[package.dependencies]
+sounddevice = "*"
+
+[[package]]
 name = "pyaudio"
 version = "0.2.14"
 description = "Cross-platform audio I/O with PortAudio"
@@ -353,4 +385,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "3f2fd0142207d35ff1cd6c808e7e17a092d553fa7625830393b6f8a4422fd2f3"
+content-hash = "9600c1e7bb742c6c81f8c26363364c7baa0ad8cb2b5bb82c213773cd7512a829"

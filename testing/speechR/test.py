@@ -7,7 +7,7 @@ def recognize_google_wav(audio_file_path):
     # Load the audio file
     with sr.AudioFile(audio_file_path) as source:
         # Adjust for ambient noise
-        #recognizer.adjust_for_ambient_noise(source)
+        recognizer.adjust_for_ambient_noise(source)
 
         # Record the audio
         audio = recognizer.record(source)
@@ -37,7 +37,7 @@ def recognize_sphinx_wav(audio_file_path):
 
     try:
         # Use Sphinx for recognition
-        text = recognizer.recognize_sphinx(audio)
+        text = recognizer.recognize_sphinx(audio, show_all=True)
         return text
     except sr.UnknownValueError:
         print("Sphinx could not understand the audio")
@@ -51,6 +51,6 @@ audio_file_path = "audio/record.wav"
 result = recognize_sphinx_wav(audio_file_path)
 
 if result:
-    print("Google Speech Recognition Result:", result)
+    print("Google Speech Recognition Result:", list ( result) )
 else:
     print("Speech recognition failed.")
