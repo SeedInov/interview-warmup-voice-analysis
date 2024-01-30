@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "speechr"
+version = "0.1.0"
+description = ""
+authors = ["Muhammad Umar Anzar <63141196+umar-anzar@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+speechrecognition = "^3.10.1"
+pyaudio = "^0.2.14"
+numpy = "^1.26.3"
+sounddevice = "^0.4.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
