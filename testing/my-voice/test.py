@@ -8,7 +8,7 @@ import service.myVoiceAnalysis as mysp
 name="record_out" # Audio File title
 path=r'D:/MyGitRepo/testing/vc' 
 
-obj = mysp.MyVoiceAnalysis('audio/record_out.wav')
+obj = mysp.MyVoiceAnalysis('audio/5.wav')
 # print(obj.number_of_pauses())
 # print(obj.number_of_syllables())
 # print(obj.rate_of_speech())
