@@ -1,6 +1,56 @@
 # interview-warmup-voice-analysis
 
+
+
 ## Emotions in Voice Analysis for Interviews
+
+## PRAAT
+
+- **Number of Syllables:**
+  - Indicates the total count of syllables in the voice recording.
+
+- **Number of Pauses:**
+  - Represents the total count of pauses made during the recording.
+  - An increased number of pauses may suggest hesitation, uncertainty, or nervousness during the speech.
+
+- **Rate of Speech:**
+  - Reflects the speed at which the speaker is talking. It is often measured in syllables per second.
+
+- **Articulation Rate:**
+  - Measures the speed or rate at which the speaker articulates words, indicating clarity of speech.
+  - A slower articulation rate could indicate that the speaker is carefully choosing their words, potentially due to confusion or nervousness.
+
+- **Speaking Duration:**
+  - Denotes the total duration of the actual speech in the recording (excluding pauses).
+  - A shorter speaking duration relative to the original duration might suggest hesitation, difficulty expressing thoughts, or nervousness.
+
+- **Original Duration:**
+  - Represents the total duration of the entire recording, including pauses and periods of silence.
+
+- **Balance:**
+  - A ratio indicating the balance between speaking duration and the original duration, suggesting the percentage of time spent in actual speech.
+  - A lower balance value might indicate that a significant portion of the recording involves pauses or silence, which could be associated with nervousness or confusion.
+
+- **F0 Mean:**
+  - Global mean of the fundamental frequency distribution, representing the average pitch of the speaker's voice.
+
+- **F0 Std (Standard Deviation):**
+  - Global standard deviation of the fundamental frequency distribution, indicating the variability in pitch.
+
+- **F0 Median:**
+  - Global median of the fundamental frequency distribution, representing the middle point in the pitch values.
+
+- **F0 Min:**
+  - Global minimum of the fundamental frequency distribution, indicating the lowest pitch.
+
+- **F0 Max:**
+  - Global maximum of the fundamental frequency distribution, indicating the highest pitch.
+
+- **F0 Quantile 25:**
+  - Global 25th quantile of the fundamental frequency distribution, representing the pitch value below which 25% of the data falls.
+
+- **F0 Quantile 75:**
+  - Global 75th quantile of the fundamental frequency distribution, representing the pitch value below which 75% of the data falls.
 
 ### 1. Confident:
 

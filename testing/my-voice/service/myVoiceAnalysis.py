@@ -9,7 +9,8 @@ from scipy.stats import ks_2samp
 from scipy.stats import ttest_ind
 import os
 import shutil
-
+from praatio.textgrid import openTextgrid
+from praatio.data_classes import point_tier, interval_tier
 
 class MyVoiceAnalysis:
 
@@ -42,6 +43,63 @@ class MyVoiceAnalysis:
             # Deleting the copied files
             os.remove(input_file_dest)
             os.remove(praat_script_dest)
+
+
+    def point_tier_dataframe(self, textgrid_file):
+        tg = openTextgrid(textgrid_file, includeEmptyIntervals=True)
+        tier_names = tg.tierNames
+
+        # Create empty DataFrame for PointTiers
+        point_tier_df = pd.DataFrame()
+
+        # Iterate through each PointTier in the TextGrid
+        for tier_name in tier_names:
+            tier = tg._tierDict[tier_name]
+
+            # Extract information from PointTier
+            if isinstance(tier, point_tier.PointTier):
+                tier_data = [(point[0], point[1]) for point in tier.entries]
+                tier_df = pd.DataFrame(tier_data, columns=[f"{tier_name}_number", f"{tier_name}_mark"])
+
+                # Concatenate with the PointTier DataFrame
+                point_tier_df = pd.concat([point_tier_df, tier_df], axis=1)
+
+        # Sort DataFrame by the first column
+        point_tier_df = point_tier_df.sort_values(by=point_tier_df.columns[0]).reset_index(drop=True)
+
+        # Display the PointTier DataFrame
+        print("PointTier DataFrame:")
+        print(point_tier_df)
+
+        return point_tier_df
+
+    def interval_tier_dataframe(self, textgrid_file):
+        tg = openTextgrid(textgrid_file, includeEmptyIntervals=True)
+        tier_names = tg.tierNames
+
+        # Create empty DataFrame for IntervalTiers
+        interval_tier_df = pd.DataFrame()
+
+        # Iterate through each IntervalTier in the TextGrid
+        for tier_name in tier_names:
+            tier = tg._tierDict[tier_name]
+
+            # Extract information from IntervalTier
+            if isinstance(tier, interval_tier.IntervalTier):
+                tier_data = [(interval[0], interval[1], interval[2]) for interval in tier.entries]
+                tier_df = pd.DataFrame(tier_data, columns=[f"{tier_name}_xmin", f"{tier_name}_xmax", f"{tier_name}_text"])
+
+                # Concatenate with the IntervalTier DataFrame
+                interval_tier_df = pd.concat([interval_tier_df, tier_df], axis=1)
+
+        # Sort DataFrame by the first column
+        interval_tier_df = interval_tier_df.sort_values(by=interval_tier_df.columns[0]).reset_index(drop=True)
+
+        # Display the IntervalTier DataFrame
+        print("\nIntervalTier DataFrame:")
+        print(interval_tier_df)
+
+        return interval_tier_df
 
     def number_of_syllables(self):
         z3:int = 0

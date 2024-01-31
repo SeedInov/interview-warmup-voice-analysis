@@ -12,6 +12,7 @@ numpy = "^1.26.3"
 scipy = "^1.12.0"
 praat-parselmouth = "^0.4.3"
 my-voice-analysis = "^0.7"
+praatio = "^6.2.0"
 
 
 [build-system]
