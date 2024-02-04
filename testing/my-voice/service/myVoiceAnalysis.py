@@ -1,4 +1,3 @@
-import parselmouth
 from parselmouth.praat import call, run_file
 import inspect
 import types
@@ -20,6 +19,7 @@ class MyVoiceAnalysis:
     def __init__(self, file_path: str) -> None:
 
         self.directory, self.sound_name = os.path.split(file_path)
+        self.text_grid = self.sound_name.split('.')[0] + ".TextGrid"
         self.running_file_path = os.getcwd()
 
         try:
@@ -38,14 +38,15 @@ class MyVoiceAnalysis:
             )
 
         except Exception:
-            raise FileNotFoundError("File may be missing or corrupt")
+            raise FileNotFoundError("File may be missing or No Voice Detected")
         finally:
             # Deleting the copied files
+            #shutil.copyfile(MyVoiceAnalysis.CURRENT_PRAAT_SCRIPT, praat_script_dest)
             os.remove(input_file_dest)
             os.remove(praat_script_dest)
 
-
-    def point_tier_dataframe(self, textgrid_file):
+    def point_tier_dataframe(self):
+        textgrid_file = os.path.join(self.directory, self.text_grid)
         tg = openTextgrid(textgrid_file, includeEmptyIntervals=True)
         tier_names = tg.tierNames
 
@@ -67,13 +68,10 @@ class MyVoiceAnalysis:
         # Sort DataFrame by the first column
         point_tier_df = point_tier_df.sort_values(by=point_tier_df.columns[0]).reset_index(drop=True)
 
-        # Display the PointTier DataFrame
-        print("PointTier DataFrame:")
-        print(point_tier_df)
-
         return point_tier_df
 
-    def interval_tier_dataframe(self, textgrid_file):
+    def interval_tier_dataframe(self):
+        textgrid_file = os.path.join(self.directory, self.text_grid)
         tg = openTextgrid(textgrid_file, includeEmptyIntervals=True)
         tier_names = tg.tierNames
 
@@ -94,10 +92,6 @@ class MyVoiceAnalysis:
 
         # Sort DataFrame by the first column
         interval_tier_df = interval_tier_df.sort_values(by=interval_tier_df.columns[0]).reset_index(drop=True)
-
-        # Display the IntervalTier DataFrame
-        print("\nIntervalTier DataFrame:")
-        print(interval_tier_df)
 
         return interval_tier_df
 

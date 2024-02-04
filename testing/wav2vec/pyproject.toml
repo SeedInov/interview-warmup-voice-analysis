@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "wav2vec"
+version = "0.1.0"
+description = ""
+authors = ["Muhammad Umar Anzar <63141196+umar-anzar@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
